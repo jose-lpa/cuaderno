@@ -20,7 +20,7 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
+LINKS = (('Autor', 'http://jose.patino.me/'),
          ('Python.org', 'http://python.org/'),
          ('Jinja2', 'http://jinja.pocoo.org/'),
          ('You can modify those links in your config file', '#'),)
@@ -32,4 +32,10 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
+THEME = 'brutalist'
+FAVICON = 'edit.svg'
+LOGO = 'notepad.png'
+FIRST_NAME = 'Brutalist'
+TWITTER = 'https://twitter.com/jose_lpa'
+GITHUB = 'https://github.com/jose-lpa'
