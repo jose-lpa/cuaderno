@@ -10,6 +10,10 @@ PUBLISHCONF=$(BASEDIR)/publishconf.py
 
 S3_BUCKET=my_s3_bucket
 
+REMOTESERVER?=patino.me
+SERVERUSER?=root
+SERVERDIR?=/var/www/cuaderno.patino.me
+
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -70,6 +74,23 @@ ifdef PORT
 else
 	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 endif
+
+ssh_upload:
+ifdef REMOTESERVER
+	scp -r $(OUTPUTDIR) $(SERVERUSER)@$(REMOTESERVER):$(SERVERDIR)
+	ssh $(SERVERUSER)@$(REMOTESERVER) sudo systemctl restart nginx
+else
+	@echo 'We have no remote server defined. Please define REMOTESERVER envvar.'
+endif
+
+rsync_upload:
+ifdef REMOTESERVER
+	rsync -avz $(OUTPUTDIR) $(SERVERUSER)@$(REMOTESERVER):$(SERVERDIR)
+	ssh $(SERVERUSER)@$(REMOTESERVER) sudo systemctl restart nginx
+else
+	@echo 'We have no remote server defined. Please define REMOTESERVER envvar.'
+endif
+
 
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
