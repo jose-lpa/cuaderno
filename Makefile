@@ -85,7 +85,7 @@ endif
 
 rsync_upload:
 ifdef REMOTESERVER
-	rsync -avz $(OUTPUTDIR) $(SERVERUSER)@$(REMOTESERVER):$(SERVERDIR)
+	rsync -avz $(OUTPUTDIR)/* $(SERVERUSER)@$(REMOTESERVER):$(SERVERDIR)
 	ssh $(SERVERUSER)@$(REMOTESERVER) sudo systemctl restart nginx
 else
 	@echo 'We have no remote server defined. Please define REMOTESERVER envvar.'
