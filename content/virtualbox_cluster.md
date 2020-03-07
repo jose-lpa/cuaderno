@@ -1,6 +1,6 @@
 Title: Cluster de VMs con VirtualBox
 Date: 2020-03-03 18:30
-Category: Virtualizacion
+Category: Virtualización
 Tags: cluster,vm,virtualbox,kubernetes
 Slug: virtualbox-cluster
 Authors: Jose L. Patino-Andres
