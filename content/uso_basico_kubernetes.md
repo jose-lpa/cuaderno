@@ -1,14 +1,14 @@
-Title: Uso basico de Kubernetes
+Title: Uso básico de Kubernetes
 Date: 2020-03-09 10:03
 Category: Contenedores
-Tags: kubernetes,configuracion
+Tags: kubernetes,configuración
 Slug: uso-basico-kubernetes
 Authors: José L. Patiño-Andrés
-Summary: Ejemplos de uso basico de Kubernetes.
+Summary: Ejemplos de uso básico de Kubernetes.
 
 ### Pods
 
-Definicion de un Pod en fichero Yaml:
+Definición de un Pod en fichero Yaml:
 
     :::yaml
     apiVersion: v1
@@ -34,7 +34,7 @@ Comandos:
 
 ### Replica Sets
 
-Definicion de un Replica Set en fichero Yaml:
+Definición de un Replica Set en fichero Yaml:
 
     :::yaml
     apiVersion: apps/v1
@@ -73,13 +73,13 @@ Comandos:
 - `kubectl replace -f replicaset-definition.yaml` para aplicar modificaciones
   en un fichero `replicaset-definition.yaml` a un Replica Set en marcha.
 - `kubectl scale --replicas=6 replicaset myapp-replicaset` para escalar un
-  Replica Set en marcha a 6 maquinas - despues de esto, la definicion del
-  fichero `replicaset-definition.yaml` prevalecera.
+  Replica Set en marcha a 6 máquinas - despues de esto, la definición del
+  fichero `replicaset-definition.yaml` prevalecerá.
 - `kubectl delete replicaset myapp-replicaset`
 
 ### Deployments
 
-Definicion de un Deployment en fichero Yaml:
+Definición de un Deployment en fichero Yaml:
 
     :::yaml
     apiVersion: apps/v1
@@ -114,17 +114,17 @@ Comandos:
 - `kubectl apply -f deployment-definition.yaml` actualizar un Deployment
   existente con cambios hechos a un fichero `deployment-definition.yaml`.
 - `kubectl set image deployment/myapp-deployment nginx=nginx:1.9.1` para cambiar 
-  la imagen del contenedor en un Deployment en ejecucion.
+  la imagen del contenedor en un Deployment en ejecución.
 - `kubectl rollout status deployment/myapp-deployment` para comprobar el estado 
   de los "rollouts".
-- `kubectl rollout history deployment/myapp-deployment` para ver el historico de
+- `kubectl rollout history deployment/myapp-deployment` para ver el histórico de
   "rollouts".
 - `kubectl rollout undo deployment/myapp-deployment` para revertir un Deployment 
   a un estado anterior.
 
 ### Services
 
-Definicion de un Service en fichero Yaml:
+Definición de un Service en fichero Yaml:
 
     :::yaml
     apiVersion: v1
