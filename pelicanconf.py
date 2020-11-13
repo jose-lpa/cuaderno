@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
 
 AUTHOR = 'José L. Patiño-Andrés'
 SITENAME = 'Cuaderno de Notas'
@@ -36,6 +34,6 @@ DEFAULT_PAGINATION = 10
 THEME = 'brutalist'
 FAVICON = 'edit.svg'
 LOGO = 'notepad.png'
-FIRST_NAME = 'Brutalist'
+FIRST_NAME = 'José L. Patiño'
 TWITTER = 'https://twitter.com/jose_lpa'
 GITHUB = 'https://github.com/jose-lpa'
