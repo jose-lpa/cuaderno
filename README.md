@@ -26,6 +26,20 @@ Summary: <frase de resumen de la entrada>
 
 Tras dicha cabecera, se escribe la entrada en Markdown.
 
+#### Resaltado de sintaxis (código)
+
+Se puede generar contenido con resaltado de sintaxis a la hora de mostrar
+código fuente, comandos, etcétera. Para ello usamos la sintaxis de Markdown:
+
+```
+    :::<LENGUAJE>
+    // Código fuente a mostrar...
+```
+
+Donde `<LENGUAJE>` es uno de los _lexers_ disponibles en la librería
+[Pygments](https://pygments.org/docs/lexers/), que es la que internamente usa
+Pelican para generar contenido con resaltado de sintaxis.
+
 ### Generar contenido
 
 Al acabar de escribir la entrada, generamos el contenido HTML/CSS con el
