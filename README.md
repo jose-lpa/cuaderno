@@ -59,3 +59,6 @@ siguiente comando:
 ```
 pelican --listen
 ```
+
+Podemos ahora ir a http://localhost:8000 para ver el resultado final generado
+por Pelican.
