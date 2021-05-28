@@ -39,3 +39,8 @@ Para cargar la base de datos de nuevo, haremos:
 
     :::bash
     psql <database> < database_dump.sql
+
+### Comprobar tamaño de una base de datos
+
+    :::psql
+    SELECT pg_size_pretty(pg_database_size('nombre_base_de_datos'));
