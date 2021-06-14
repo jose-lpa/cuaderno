@@ -59,6 +59,8 @@ Añade paquetes de terceros al proyecto, instalándolos en el entorno. Ejemplos:
   más apropiada. 
 - `poetry add Django==3.0`: añade Django al proyecto, usando la versión
   especificada.
+- `poetry add pytest --dev`: añade Pytest al proyecto, **como dependencia de 
+  desarrollo**.
 
 Alternativamente, se pueden añadir las dependencias a mano editando el fichero
 `pyproject.toml` en su sección `[tool.poetry.dependencies]`.
