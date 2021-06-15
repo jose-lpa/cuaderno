@@ -86,3 +86,8 @@ Instala las dependencias del proyecto. Esto puede ser de dos maneras:
 1. Si existe un archivo `poetry.lock`, instala las versions allí declaradas.
 2. Si no existe dicho archivo, Poetry resuelve todas las dependencias declaradas
    en `pyproject.toml`, las instala y genera el fichero `poetry.lock`.
+
+### `poetry update`
+
+Actualiza las versiones de las dependencias del proyecto. Para actualizar la
+versión de un paquete concreto, utilizamos `poetry update <PAQUETE>`.
