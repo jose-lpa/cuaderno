@@ -70,6 +70,15 @@ comando `pg_terminate_backend` con el `pid` del proceso de dicha consulta:
     :::postgresql
     SELECT pg_terminate_backend(<PID_CONSULTA>)
 
+Esto nos permite también hacer consultas más elaboradas. Por ejemplo, si
+quisiéramos terminar todos los procesos que estuvieran en el estado
+`idle in transaction`, podríamos hacer directamente una consulta como ésta:
+
+    :::postgresql
+    SELECT pg_terminate_backend(pg_stat_activity.pid) 
+    FROM pg_stat_activity 
+    WHERE pg_stat_activity.state = 'idle in transaction';
+
 ## Detalles
 
 Los diferentes estados de un proceso o consulta en PostgreSQL, columna `state`
