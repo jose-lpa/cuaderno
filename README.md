@@ -6,6 +6,13 @@ creado con [Pelican](https://blog.getpelican.com/).
 
 ## Uso de Pelican
 
+Antes de empezar a editar contenidos, hay que instalar la aplicación Pelican
+con soporte para Markdown:
+
+```bash
+pip install pelican[markdown]
+```
+
 Las instrucciones completas para usar el generador se pueden encontrar en
 [la documentación de Pelican](https://docs.getpelican.com/en/stable/index.html).
 
