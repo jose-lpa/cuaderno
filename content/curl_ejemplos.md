@@ -66,6 +66,37 @@ respuesta del comando `curl` mediante una tubería.
 La más conveniente a mi parecer es `jq`, ya que colorea el JSON resaltando la
 sintaxis.
 
+### Contar número de elementos en la respuesta JSON
+
+Podemos contar el número de elementos devueltos en una respuesta JSON con el
+comando `jq` también:
+
+    :::bash
+    curl http://example.com | jq length
+
+    34
+
+Si el campo que queremos contar está anidado, por ejemplo si la respuesta fuera así:
+
+    :::json
+    {
+        "results": {
+            "items": [
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    }
+
+podríamos hacer lo siguiente:
+
+    :::bash
+    curl http://example.com | jq -r '.results.items | length'
+
+    4
+
 
 ## Hacer `POST` a una API REST JSON
 
