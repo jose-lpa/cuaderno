@@ -105,6 +105,17 @@ podríamos hacer lo siguiente:
          -H "Content-Type: application/json"
          --data '{"name": "New Item", "quantity": 25, price: 12.5}'
 
+### Usar el contenido de un fichero JSON como datos de `POST`
+
+Si tenemos un fichero `.json` cuyo contenido queremos enviar como cuerpo de una
+petición  `POST`, podemos hacer por ejemplo:
+
+    :::bash
+    curl -X POST "http://example.com/items" 
+         -H "Content-Type: application/json" 
+         -d @mi_fichero.json
+
+
 ## Autenticación mediante cabecera HTTP (API token)
 
     :::bash
