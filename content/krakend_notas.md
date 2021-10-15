@@ -1,7 +1,7 @@
 Title: Ejemplo de configuración de KrakenD API Gateway
 Date: 2021-06-11 16:23
-Category: API
-Tags: krakend,gateway,microservicios,api,rest,graphql
+Category: Microservicios
+Tags: krakend,gateway,api,rest,graphql,golang
 Slug: krakend-notas
 Authors: José L. Patiño-Andrés
 Summary: Ejemplo de configuración de KrakenD API Gateway y anotaciones.
