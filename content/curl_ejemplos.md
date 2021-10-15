@@ -116,6 +116,13 @@ petición  `POST`, podemos hacer por ejemplo:
          -d @mi_fichero.json
 
 
+## Enviar ficheros en una petición `POST`
+
+    :::bash
+    curl -X POST "http://example.com/items"
+         -F parámetro_formulario=@mi_fichero.pdf
+
+
 ## Autenticación mediante cabecera HTTP (API token)
 
     :::bash
