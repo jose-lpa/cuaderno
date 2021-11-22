@@ -26,3 +26,18 @@ forma automática mediante esta otra consulta:
         ) AS duplicates 
     WHERE main.column_1 = duplicates.column_1 
         AND main.column_2 = duplicates.column_2;
+
+
+### SQLAlchemy
+
+Esta misma consulta se puede hacer mediante SQLAlchemy de la siguiente forma:
+
+    :::python
+    session.execute(
+        select(
+            my_table.column_1, 
+            my_table.column_2,
+            func.count(my_table.id).label("count")
+        ).from(my_table).group_by(my_table.column_1).having(
+            func.count(my_table.id)
+        ).all()
