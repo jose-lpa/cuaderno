@@ -44,3 +44,8 @@ Para cargar la base de datos de nuevo, haremos:
 
     :::psql
     SELECT pg_size_pretty(pg_database_size('nombre_base_de_datos'));
+
+### Comprobar tamaño de una de las tablas de la base de datos
+
+    :::psql
+    SELECT pg_size_pretty(pg_total_relation_size('nombre_tabla'));
