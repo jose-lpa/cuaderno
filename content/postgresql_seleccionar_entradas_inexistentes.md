@@ -42,3 +42,15 @@ la tabla `usuario`, podemos hacer la siguiente consulta:
     LEFT JOIN usuario ON usuario.id = posts.id_usuario 
     WHERE usuario.id IS NULL;
 
+O también podríamos usar la cláusula `NOT EXISTS`:
+
+    :::postgresql
+    SELECT
+        post.id_usuario,
+        post.id
+    FROM post
+    WHERE NOT EXISTS (
+        SELECT id
+        FROM usuario
+        WHERE id = post.id_usuario
+    );
