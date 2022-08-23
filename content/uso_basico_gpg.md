@@ -1,6 +1,6 @@
 Title: Uso básico de GPG
 Date: 2021-06-5 15:34
-Category: Sistema
+Category: Seguridad
 Tags: gpg,seguridad,cifrado
 Slug: gpg-basico
 Authors: José L. Patiño-Andrés
