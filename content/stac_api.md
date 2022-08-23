@@ -1,5 +1,5 @@
 Title: Referencia de STAC API
-Date: 2022-08-21 10:15
+Date: 2022-08-23 11:05
 Category: GIS
 Tags: gis,api,stac,servicios
 Slug: referencia-stac-api
