@@ -49,3 +49,13 @@ Para cargar la base de datos de nuevo, haremos:
 
     :::psql
     SELECT pg_size_pretty(pg_total_relation_size('nombre_tabla'));
+
+### Activar esquema para un determinado usuario
+
+En ocasiones existen tablas en nuestra base de datos que nuestro usuario actual
+no es capaz de ver cuando ejecuta `\d`. Esto sucede porque esas tablas son de un
+esquema que nuestro usuario no tiene asignado en el `search_path`. Podemos hacer
+un cambio para que pueda ver todo lo relacionado con ese esquema, así:
+
+    :::psql
+    SET search_path = <nuevo_esquema>, public;
