@@ -24,6 +24,22 @@ bases de datos**.
     :::psql
     ALTER USER <user> CREATEDB;
 
+### Dar permisos de superusuario
+
+Podemos dar todos los permisos de gestión a un usuario normal con el comando:
+
+    :::psql
+    ALTER ROLE <user> SUPERUSER;
+
+Esto nos permite ejecutar diversos comandos, más allá de crear y utilizar
+bases de datos, con un usuario "normal", como por ejemplo añadir extensiones
+a una base de datos existente:
+
+    :::psql
+    CREATE EXTENSION postgis;
+
+Comando que no podríamos ejecutar sin ser superusuario.
+
 ### Backup simple de una base de datos (en consola)
 
     :::bash
