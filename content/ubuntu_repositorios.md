@@ -91,3 +91,31 @@ En nuestro ejemplo:
 ```
 deb [arch=amd64] http://apt.postgresql.org/pub/repos/apt/ focal-pgdg main
 ```
+
+## Añadir claves GPG de repositorios
+
+Los repositorios proveen de una clave GPG que hay que instalar y mantener actualizada, ya que de lo
+contrario podemos encontrarnos con errores al hacer `apt update`, como por ejemplo éste:
+
+    :::bash
+    W: An error occurred during the signature verification. 
+    The repository is not updated and the previous index files will be used. 
+    GPG error: https://packages.cloud.google.com/apt cloud-sdk InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY B53DC80D13EDEF05
+    W: Failed to fetch https://packages.cloud.google.com/apt/dists/cloud-sdk/InRelease  
+    The following signatures couldn't be verified because the public key is not available: NO_PUBKEY B53DC80D13EDEF05
+    W: Some index files failed to download. They have been ignored, or old ones used instead.
+
+Para instalar las claves GPG, por ejemplo valiéndonos de éste mismo ejemplo de repositorio para
+Google Cloud SDK, haremos lo siguiente:
+
+    :::bash
+    wget -O- https://packages.cloud.google.com/apt/doc/apt-key.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/cloud.google.gpg
+
+Es decir, `wget -O-` a la clave GPG del repositorio, que habitualmente se ofrece en el mismo, un
+`gpg --dearmor` a la clave y el resultado lo guardaremos en `/usr/share/keyrings/clave.gpg`.
+
+Después de hacer esto, nos aseguraremos de que el fichero con la clave se encuentra señalado en la
+configuración del repositorio, en nuestro ejemplo en `/etc/apt/sources.list.d/google-cloud-sdk.list`:
+
+    :::debsources
+    deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main
