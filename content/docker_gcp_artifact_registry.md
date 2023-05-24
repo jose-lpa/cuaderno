@@ -29,7 +29,8 @@ En el Dockerfile vamos a añadir las siguientes líneas:
 
     RUN pip install keyring keyrings.google-artifactregistry.auth
 
-    ... # AHORA podemos hacer `pip install ...` a nuestro paquete privado.
+    # AHORA podemos hacer `pip install ...` a nuestro paquete privado.
+    RUN --mount=type=secret,id=gsa_key pip install -r requirements.txt
 
 Ésto se hace porque los secretos de Docker se guardan en el volumen `/run/secrets`
 bajo el mismo nombre que se le ha pasado al secreto. Entonces lo que hacemos es
