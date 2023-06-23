@@ -25,6 +25,11 @@ Inicializar el entorno de trabajo de Alembic:
     cd directorio/del/proyecto
     alembic init alembic
 
+O también, **si queremos usar Alembic con un controlador de BD asíncrono, el comando es:
+
+    :::bash
+    alembic init -t async alembic
+
 Esto crea un nuevo directorio llamado `alembic/` y un fichero `alembic.ini`,
 ambos en el `directorio/del/proyecto`. El directorio `alembic tiene este
 contenido:
@@ -86,6 +91,7 @@ necesarias.
 
 Con esto ya deberíamos estar listos para usar Alembic y hacer migraciones con 
 nuestra base de datos.
+
 
 ## Comandos de uso
 
