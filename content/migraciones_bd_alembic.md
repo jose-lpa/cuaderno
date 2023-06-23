@@ -25,7 +25,7 @@ Inicializar el entorno de trabajo de Alembic:
     cd directorio/del/proyecto
     alembic init alembic
 
-O también, **si queremos usar Alembic con un controlador de BD asíncrono, el comando es:
+O también, **si queremos usar Alembic con un controlador de BD asíncrono**, el comando es:
 
     :::bash
     alembic init -t async alembic
