@@ -30,6 +30,8 @@ O también, **si queremos usar Alembic con un controlador de BD asíncrono**, el
     :::bash
     alembic init -t async alembic
 
+Se puede consultar la documentación oficial [aquí](https://alembic.sqlalchemy.org/en/latest/cookbook.html#using-asyncio-with-alembic).
+
 Esto crea un nuevo directorio llamado `alembic/` y un fichero `alembic.ini`,
 ambos en el `directorio/del/proyecto`. El directorio `alembic tiene este
 contenido:
