@@ -37,3 +37,15 @@ de dicho item 12345, la consulta sería:
             to_jsonb(1043.25)
         ) 
     WHERE id = 12345;
+
+
+## Comprobar la existencia de un determinado campo
+
+Si queremos saber si en una columna JSONB existe un determinado campo, por ejemplo para saber
+cuántas entradas tienen dicho campo guardado en su JSONB, podemos usar el operador `?`:
+
+    :::psql
+    SELECT COUNT(*) FROM item WHERE properties ? 'category';
+
+La consulta anterior nos devolvería el número de filas de la tabla `item` cuya columna `properties`
+(que es JSONB) tiene un campo `category`.
