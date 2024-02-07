@@ -121,3 +121,19 @@ de los recursos existentes en un proyecto determinado**. En nuestro caso, éste 
 ```bash
 gcloud beta resource-config bulk-export --project=my-project --resource-format=terraform
 ```
+
+## Deshacer un `import` inválido
+
+En caso de que nos equivoquemos e importemos algo que no queríamos, podemos deshacer dicho `import`
+con el comando `terraform state rm ...`. Por ejemplo, si hemos importado un GCP Storage bucket
+llamado `my-data` con el comando
+
+```bash
+terraform import google_storage_bucket.my_data my-data
+```
+
+y vemos que es un error y no queríamos importarlo, el comando para deshacerlo sería:
+
+```bash
+terraform state rm google_storage_bucket.my_data
+```
