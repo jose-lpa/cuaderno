@@ -1,5 +1,11 @@
 # Cuaderno de notas
 
+> [!IMPORTANT]
+> Este repositorio ha sido archivado. La versión actual del cuaderno se aloja
+> ahora en [GitLab](https://gitlab.com/jose-lpa/cuaderno) y el cuaderno se
+> sirve con [Hugo]([url](https://gohugo.io)) en GitLab Pages. El sitio online
+> sigue siendo https://cuaderno.patino.me 
+
 Anotaciones sobre comandos, trucos y utilidades que he ido recopilando a lo
 largo del tiempo. Antiguamente en una libreta, ahora en un sitio web estático
 creado con [Pelican](https://blog.getpelican.com/).
